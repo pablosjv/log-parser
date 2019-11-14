@@ -10,10 +10,11 @@ default: help
 help: ## Print this message.
 	@awk 'BEGIN {FS = ":.*?## "} /^[a-zA-Z_-]+:.*?## / {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}' $(MAKEFILE_LIST)
 
+
 build: ## Build the binary. Place it under bin
 	@echo "building ${BIN_NAME} ${VERSION}"
 	@echo "GOPATH=${GOPATH}"
-	go build -o bin/${BIN_NAME}
+	go build -o bin/${BIN_NAME} cmd/*.go
 
 .PHONY: test
 test:  ## Run tests

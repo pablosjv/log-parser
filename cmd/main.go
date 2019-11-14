@@ -28,8 +28,8 @@ func main() {
 	flag.StringVar(&targetHost, "targetHost", "", "Hostname to wich other connects")
 	flag.StringVar(&originHost, "originHost", "", "Hostname that connect to others")
 	flag.StringVar(&fileName, "f", "", "Log filename to parse")
-	flag.Int64Var(&initTime, "i", 0, "Init time")
-	flag.Int64Var(&endTime, "e", 0, "End time")
+	flag.Int64Var(&initTime, "i", 0, "Init time in unix format")
+	flag.Int64Var(&endTime, "e", 0, "End time in unix format")
 	flag.BoolVar(&tail, "t", false, "Tail the log file and report")
 	flag.Int64Var(&reportPeriod, "period", 3600, "Period in seconds to report")
 
